@@ -1,0 +1,1575 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Happy 21st Birthday! 🌙</title>
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: #080611;
+            color: white;
+            overflow-x: hidden;
+        }
+
+        /* =========================
+           BACKGROUND
+        ========================== */
+
+        .background {
+            position: fixed;
+            inset: 0;
+            z-index: -2;
+
+            background:
+                radial-gradient(
+                    circle at 20% 20%,
+                    #34205c 0%,
+                    transparent 30%
+                ),
+                radial-gradient(
+                    circle at 80% 70%,
+                    #171d58 0%,
+                    transparent 30%
+                ),
+                #080611;
+        }
+
+        .stars {
+            position: fixed;
+            inset: 0;
+            z-index: -1;
+            pointer-events: none;
+        }
+
+        .star {
+            position: absolute;
+            width: 3px;
+            height: 3px;
+            background: white;
+            border-radius: 50%;
+            opacity: 0.7;
+            animation: twinkle 2s infinite alternate;
+        }
+
+        @keyframes twinkle {
+            from {
+                opacity: 0.2;
+                transform: scale(0.7);
+            }
+
+            to {
+                opacity: 1;
+                transform: scale(1.3);
+            }
+        }
+
+
+        /* =========================
+           NAVIGATION
+        ========================== */
+
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+
+            padding: 18px 7%;
+
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            z-index: 100;
+
+            backdrop-filter: blur(12px);
+
+            background: rgba(8, 6, 17, 0.55);
+
+            border-bottom:
+                1px solid rgba(255,255,255,0.08);
+        }
+
+        .logo {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: #f7d84a;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 25px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #f7d84a;
+        }
+
+
+        /* =========================
+           HERO
+        ========================== */
+
+        .hero {
+            min-height: 100vh;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            text-align: center;
+
+            padding:
+                100px 20px 60px;
+        }
+
+        .hero-content {
+            max-width: 850px;
+        }
+
+        .moon {
+            font-size: 4rem;
+            margin-bottom: 15px;
+
+            animation:
+                float 3s ease-in-out infinite;
+        }
+
+        @keyframes float {
+
+            0%, 100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-12px);
+            }
+
+        }
+
+        .small-title {
+            color: #f7d84a;
+
+            font-weight: 600;
+
+            letter-spacing: 4px;
+
+            text-transform: uppercase;
+
+            font-size: 0.9rem;
+        }
+
+        .hero h1 {
+
+            font-size:
+                clamp(3rem, 8vw, 7rem);
+
+            line-height: 0.95;
+
+            margin: 20px 0;
+
+            font-weight: 800;
+        }
+
+        .hero h1 span {
+
+            color: #f7d84a;
+
+            text-shadow:
+                0 0 25px
+                rgba(247, 216, 74, 0.35);
+        }
+
+        .friend-name {
+
+            font-size: 1.5rem;
+
+            margin-bottom: 15px;
+
+            color: #ddd;
+        }
+
+        .subtitle {
+
+            color: #aaa;
+
+            max-width: 600px;
+
+            margin: auto;
+
+            line-height: 1.8;
+        }
+
+        .birthday-button {
+
+            display: inline-block;
+
+            margin-top: 35px;
+
+            padding:
+                14px 30px;
+
+            border-radius: 50px;
+
+            background: #f7d84a;
+
+            color: #080611;
+
+            font-weight: 700;
+
+            text-decoration: none;
+
+            transition: 0.3s;
+
+            box-shadow:
+                0 0 25px
+                rgba(247,216,74,0.25);
+        }
+
+        .birthday-button:hover {
+
+            transform:
+                translateY(-4px)
+                scale(1.03);
+
+            box-shadow:
+                0 0 35px
+                rgba(247,216,74,0.45);
+        }
+
+
+        /* =========================
+           SECTIONS
+        ========================== */
+
+        section {
+            padding: 100px 7%;
+        }
+
+        .section-title {
+
+            text-align: center;
+
+            margin-bottom: 50px;
+        }
+
+        .section-title h2 {
+
+            font-size: 2.5rem;
+
+            margin-bottom: 10px;
+        }
+
+        .section-title p {
+
+            color: #999;
+        }
+
+
+        /* =========================
+           PHOTO SLIDESHOW
+        ========================== */
+
+        .slideshow-container {
+
+            max-width: 900px;
+
+            margin: auto;
+
+            position: relative;
+        }
+
+        .slide {
+
+            display: none;
+
+            animation:
+                fade 0.8s ease;
+        }
+
+        .slide.active {
+
+            display: block;
+        }
+
+        @keyframes fade {
+
+            from {
+
+                opacity: 0;
+
+                transform:
+                    scale(0.97);
+            }
+
+            to {
+
+                opacity: 1;
+
+                transform:
+                    scale(1);
+            }
+        }
+
+        .photo-frame {
+
+            position: relative;
+
+            padding: 10px;
+
+            border-radius: 25px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #f7d84a,
+                    #6d4aff
+                );
+
+            box-shadow:
+                0 20px 60px
+                rgba(0,0,0,0.5);
+        }
+
+        .photo-frame img {
+
+            display: block;
+
+            width: 100%;
+
+            height: 520px;
+
+            object-fit: cover;
+
+            border-radius: 18px;
+
+            background: #171321;
+        }
+
+        .photo-caption {
+
+            text-align: center;
+
+            padding: 20px;
+        }
+
+        .photo-caption h3 {
+
+            font-size: 1.3rem;
+        }
+
+        .photo-caption p {
+
+            color: #999;
+
+            margin-top: 5px;
+        }
+
+
+        /* =========================
+           SLIDESHOW BUTTONS
+        ========================== */
+
+        .prev,
+        .next {
+
+            position: absolute;
+
+            top: 45%;
+
+            width: 50px;
+            height: 50px;
+
+            border: none;
+
+            border-radius: 50%;
+
+            background:
+                rgba(8,6,17,0.8);
+
+            color: white;
+
+            font-size: 1.5rem;
+
+            cursor: pointer;
+
+            transition: 0.3s;
+
+            z-index: 5;
+        }
+
+        .prev {
+            left: 20px;
+        }
+
+        .next {
+            right: 20px;
+        }
+
+        .prev:hover,
+        .next:hover {
+
+            background: #f7d84a;
+
+            color: #080611;
+        }
+
+
+        /* =========================
+           DOTS
+        ========================== */
+
+        .dots {
+
+            text-align: center;
+
+            margin-top: 15px;
+
+            max-width: 700px;
+
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .dot {
+
+            display: inline-block;
+
+            width: 10px;
+            height: 10px;
+
+            margin: 5px;
+
+            border-radius: 50%;
+
+            background: #555;
+
+            cursor: pointer;
+
+            transition: 0.3s;
+        }
+
+        .dot.active {
+
+            background: #f7d84a;
+
+            transform:
+                scale(1.3);
+        }
+
+
+        /* =========================
+           CATS
+        ========================== */
+
+        .cat-section {
+
+            text-align: center;
+        }
+
+        .cat-card {
+
+            max-width: 700px;
+
+            margin: auto;
+
+            padding: 45px;
+
+            border-radius: 30px;
+
+            background:
+                rgba(255,255,255,0.04);
+
+            border:
+                1px solid
+                rgba(255,255,255,0.08);
+
+            box-shadow:
+                0 20px 50px
+                rgba(0,0,0,0.25);
+        }
+
+        .cat {
+
+            font-size: 5rem;
+
+            margin-bottom: 20px;
+        }
+
+        .cat-card h3 {
+
+            font-size: 2rem;
+
+            margin-bottom: 15px;
+        }
+
+        .cat-card p {
+
+            color: #aaa;
+
+            line-height: 1.8;
+        }
+
+
+        /* =========================
+           MESSAGE
+        ========================== */
+
+        .message {
+
+            max-width: 800px;
+
+            margin: auto;
+
+            text-align: center;
+        }
+
+        .message-card {
+
+            padding: 50px;
+
+            border-radius: 30px;
+
+            background:
+                linear-gradient(
+                    145deg,
+                    rgba(109,74,255,0.15),
+                    rgba(247,216,74,0.08)
+                );
+
+            border:
+                1px solid
+                rgba(255,255,255,0.08);
+        }
+
+        .message-card h2 {
+
+            font-size: 2.5rem;
+
+            margin-bottom: 20px;
+        }
+
+        .message-card p {
+
+            color: #bbb;
+
+            line-height: 2;
+        }
+
+
+        /* =========================
+           FOOTER
+        ========================== */
+
+        footer {
+
+            text-align: center;
+
+            padding: 50px 20px;
+
+            border-top:
+                1px solid
+                rgba(255,255,255,0.08);
+
+            color: #777;
+        }
+
+        footer .heart {
+
+            color: #f7d84a;
+        }
+
+
+        /* =========================
+           MOBILE
+        ========================== */
+
+        @media (max-width: 700px) {
+
+            nav {
+
+                padding:
+                    15px 5%;
+            }
+
+            .nav-links {
+
+                gap: 12px;
+            }
+
+            .nav-links a {
+
+                font-size: 0.75rem;
+            }
+
+            section {
+
+                padding:
+                    80px 5%;
+            }
+
+            .photo-frame img {
+
+                height: 400px;
+            }
+
+            .prev,
+            .next {
+
+                width: 40px;
+
+                height: 40px;
+
+                font-size: 1.1rem;
+            }
+
+            .prev {
+
+                left: 12px;
+            }
+
+            .next {
+
+                right: 12px;
+            }
+
+            .message-card,
+            .cat-card {
+
+                padding:
+                    30px 20px;
+            }
+
+            .dot {
+
+                width: 8px;
+                height: 8px;
+
+                margin: 4px;
+            }
+        }
+
+    </style>
+</head>
+
+
+<body>
+
+
+    <!-- =========================
+         BACKGROUND
+    ========================== -->
+
+    <div class="background"></div>
+
+    <div class="stars" id="stars"></div>
+
+
+    <!-- =========================
+         NAVIGATION
+    ========================== -->
+
+    <nav>
+
+        <div class="logo">
+            🌙 21
+        </div>
+
+        <ul class="nav-links">
+
+            <li>
+                <a href="#home">
+                    Home
+                </a>
+            </li>
+
+            <li>
+                <a href="#photos">
+                    Photos
+                </a>
+            </li>
+
+            <li>
+                <a href="#message">
+                    Message
+                </a>
+            </li>
+
+        </ul>
+
+    </nav>
+
+
+    <!-- =========================
+         HERO
+    ========================== -->
+
+    <section
+        class="hero"
+        id="home"
+    >
+
+        <div class="hero-content">
+
+            <div class="moon">
+                🌙
+            </div>
+
+            <div class="small-title">
+                A special day has arrived
+            </div>
+
+            <h1>
+
+                HAPPY<br>
+
+                <span>
+                    21ST!
+                </span>
+
+            </h1>
+
+            <!-- CHANGE NAME HERE -->
+
+            <div class="friend-name">
+
+                Happy Birthday,
+                <strong>
+                    STEVEN CALZADA
+                </strong>
+                ! 🎂
+
+            </div>
+
+            <p class="subtitle">
+
+               21 kana debut mo na!!!!
+
+                May this new chapter be filled
+                with great memories, adventures,
+                laughter, and plenty of cats. 🐈
+
+            </p>
+
+            <a
+                href="#photos"
+                class="birthday-button"
+            >
+
+                See the Memories ✨
+
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         PHOTOS
+    ========================== -->
+
+    <section id="photos">
+
+        <div class="section-title">
+
+            <h2>
+                📸 Pagmumukha mo
+            </h2>
+
+            <p>
+                Kunti lang pinili ko baka magalit ka
+            </p>
+
+        </div>
+
+
+        <div class="slideshow-container">
+
+            <!-- PHOTO 1 -->
+
+            <div class="slide active">
+
+                <div class="photo-frame">
+
+                    <img
+                        src="img/photo1.jpg"
+                        alt="puto 1"
+                    >
+
+                </div>
+
+                <div class="photo-caption">
+
+                    <h3>
+                        puto #1
+                    </h3>
+
+                </div>
+
+            </div>
+
+
+            <!-- PHOTO 2 -->
+
+            <div class="slide">
+
+                <div class="photo-frame">
+
+                    <img
+                        src="img/photo2.jpg"
+                        alt="puto 2"
+                    >
+
+                </div>
+
+                <div class="photo-caption">
+
+                    <h3>
+                        puto #2
+                    </h3>
+
+
+                </div>
+
+            </div>
+
+
+            <!-- PHOTO 3 -->
+
+            <div class="slide">
+
+                <div class="photo-frame">
+
+                    <img
+                        src="img/photo3.jpg"
+                        alt="puto 3"
+                    >
+
+                </div>
+
+                <div class="photo-caption">
+
+                    <h3>
+                        puto #3
+                    </h3>
+
+                </div>
+
+            </div>
+
+
+            <!-- PHOTO 4 -->
+
+            <div class="slide">
+
+                <div class="photo-frame">
+
+                    <img
+                        src="img/photo4.jpg"
+                        alt="puto 4"
+                    >
+
+                </div>
+
+                <div class="photo-caption">
+
+                    <h3>
+                        puto #4
+                    </h3>
+
+                </div>
+
+            </div>
+
+
+            <!-- PHOTO 5 -->
+
+            <div class="slide">
+
+                <div class="photo-frame">
+
+                    <img
+                        src="img/photo5.jpg"
+                        alt="puto 5"
+                    >
+
+                </div>
+
+                <div class="photo-caption">
+
+                    <h3>
+                        puto #5
+                    </h3>
+
+                </div>
+
+            </div>
+
+
+            <!-- PHOTO 6 -->
+
+            <div class="slide">
+
+                <div class="photo-frame">
+
+                    <img
+                        src="img/photo6.jpg"
+                        alt="puto 6"
+                    >
+
+                </div>
+
+                <div class="photo-caption">
+
+                    <h3>
+                        puto #6
+                    </h3>
+
+                </div>
+
+            </div>
+
+
+            <!-- PHOTO 7 -->
+
+            <div class="slide">
+
+                <div class="photo-frame">
+
+                    <img
+                        src="img/photo7.jpg"
+                        alt="puto 7"
+                    >
+
+                </div>
+
+                <div class="photo-caption">
+
+                    <h3>
+                        puto #7
+                    </h3>
+
+                </div>
+
+            </div>
+
+
+            <!-- PHOTO 8 -->
+
+            <div class="slide">
+
+                <div class="photo-frame">
+
+                    <img
+                        src="img/photo8.jpg"
+                        alt="puto 8"
+                    >
+
+                </div>
+
+                <div class="photo-caption">
+
+                    <h3>
+                        puto #8
+                    </h3>
+
+                </div>
+
+            </div>
+
+
+            <!-- PHOTO 9 -->
+
+            <div class="slide">
+
+                <div class="photo-frame">
+
+                    <img
+                        src="img/photo9.jpg"
+                        alt="puto 9"
+                    >
+
+                </div>
+
+                <div class="photo-caption">
+
+                    <h3>
+                        puto #9
+                    </h3>
+
+                </div>
+
+            </div>
+
+
+            <!-- PHOTO 10 -->
+
+            <div class="slide">
+
+                <div class="photo-frame">
+
+                    <img
+                        src="img/photo10.jpg"
+                        alt="puto 10"
+                    >
+
+                </div>
+
+                <div class="photo-caption">
+
+                    <h3>
+                        puto #10
+                    </h3>
+
+                </div>
+
+            </div>
+
+
+            <!-- PHOTO 11 -->
+
+            <div class="slide">
+
+                <div class="photo-frame">
+
+                    <img
+                        src="img/photo11.jpg"
+                        alt="puto 11"
+                    >
+
+                </div>
+
+                <div class="photo-caption">
+
+                    <h3>
+                        puto #11
+                    </h3>
+
+                </div>
+
+            </div>
+
+
+            <!-- PHOTO 12 -->
+
+            <div class="slide">
+
+                <div class="photo-frame">
+
+                    <img
+                        src="img/photo12.jpg"
+                        alt="puto 12"
+                    >
+
+                </div>
+
+                <div class="photo-caption">
+
+                    <h3>
+                        puto #12
+                    </h3>
+
+                </div>
+
+            </div>
+
+
+            <!-- PHOTO 13 -->
+
+            <div class="slide">
+
+                <div class="photo-frame">
+
+                    <img
+                        src="img/photo13.jpg"
+                        alt="puto 13"
+                    >
+
+                </div>
+
+                <div class="photo-caption">
+
+                    <h3>
+                        puto #13
+                    </h3>
+
+                </div>
+
+            </div>
+
+
+            <!-- PHOTO 14 -->
+
+            <div class="slide">
+
+                <div class="photo-frame">
+
+                    <img
+                        src="img/photo14.jpg"
+                        alt="puto 14"
+                    >
+
+                </div>
+
+                <div class="photo-caption">
+
+                    <h3>
+                        puto #14
+                    </h3>
+
+                </div>
+
+            </div>
+
+
+            <!-- PHOTO 15 -->
+
+            <div class="slide">
+
+                <div class="photo-frame">
+
+                    <img
+                        src="img/photo15.jpg"
+                        alt="puto 15"
+                    >
+
+                </div>
+
+                <div class="photo-caption">
+
+                    <h3>
+                        puto #15
+                    </h3>
+
+                </div>
+
+            </div>
+
+
+            <!-- PHOTO 16 -->
+
+            <div class="slide">
+
+                <div class="photo-frame">
+
+                    <img
+                        src="img/photo16.jpg"
+                        alt="puto 16"
+                    >
+
+                </div>
+
+                <div class="photo-caption">
+
+                    <h3>
+                        puto #16
+                    </h3>
+
+                </div>
+
+            </div>
+
+
+            <!-- PREVIOUS -->
+
+            <button
+                class="prev"
+                onclick="changeSlide(-1)"
+            >
+                ❮
+            </button>
+
+
+            <!-- NEXT -->
+
+            <button
+                class="next"
+                onclick="changeSlide(1)"
+            >
+                ❯
+            </button>
+
+        </div>
+
+
+        <!-- DOTS -->
+
+        <div class="dots">
+
+            <span
+                class="dot active"
+                onclick="currentSlide(1)"
+            ></span>
+
+            <span
+                class="dot"
+                onclick="currentSlide(2)"
+            ></span>
+
+            <span
+                class="dot"
+                onclick="currentSlide(3)"
+            ></span>
+
+            <span
+                class="dot"
+                onclick="currentSlide(4)"
+            ></span>
+
+            <span
+                class="dot"
+                onclick="currentSlide(5)"
+            ></span>
+
+            <span
+                class="dot"
+                onclick="currentSlide(6)"
+            ></span>
+
+            <span
+                class="dot"
+                onclick="currentSlide(7)"
+            ></span>
+
+            <span
+                class="dot"
+                onclick="currentSlide(8)"
+            ></span>
+
+            <span
+                class="dot"
+                onclick="currentSlide(9)"
+            ></span>
+
+            <span
+                class="dot"
+                onclick="currentSlide(10)"
+            ></span>
+
+            <span
+                class="dot"
+                onclick="currentSlide(11)"
+            ></span>
+
+            <span
+                class="dot"
+                onclick="currentSlide(12)"
+            ></span>
+
+            <span
+                class="dot"
+                onclick="currentSlide(13)"
+            ></span>
+
+            <span
+                class="dot"
+                onclick="currentSlide(14)"
+            ></span>
+
+            <span
+                class="dot"
+                onclick="currentSlide(15)"
+            ></span>
+
+            <span
+                class="dot"
+                onclick="currentSlide(16)"
+            ></span>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         CAT SECTION
+    ========================== -->
+
+    <section class="cat-section">
+
+        <div class="cat-card">
+
+            <div class="cat">
+                🐈‍⬛
+            </div>
+
+            <h3>
+                Certified Cat Enjoyer
+            </h3>
+
+            <p>
+
+                Because apparently turning 21
+                isn't enough of a reason to stop
+                being obsessed with cats.
+
+                <br><br>
+
+                Here's to another year of petting
+                every cat that crosses your path. 🐈‍⬛
+
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         BIRTHDAY MESSAGE
+    ========================== -->
+
+    <section id="message">
+
+        <div class="message">
+
+            <div class="section-title">
+
+                <h2>
+                    💌 A Little Message
+                </h2>
+
+                <p>
+                    From someone who thinks
+                    you're pretty cool.
+                </p>
+
+            </div>
+
+
+            <div class="message-card">
+
+                <h2>
+                    Happy 21st Birthday! 🎂
+                </h2>
+
+                <p>
+
+                    Happy birthday!
+
+                    You've officially reached
+                    Level 21. 🎮
+
+                    <br><br>
+
+                    I hope this year brings you lots
+                    of happiness, good memories,
+                    exciting adventures, and of course,
+                    more cats.
+
+                    <br><br>
+
+                    Thank you for all the memories
+                    we've made so far.
+
+                    Here's to many more!
+
+                    <br><br>
+
+                    Stay awesome and enjoy your day! 💜🌙
+
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         FOOTER
+    ========================== -->
+
+    <footer>
+
+        Made with
+        <span class="heart">
+            ♥
+        </span>
+        for a very special 21st birthday.
+
+        <br><br>
+
+        🌙 🐈 🎂 ✨
+
+    </footer>
+
+
+    <!-- =========================
+         JAVASCRIPT
+    ========================== -->
+
+    <script>
+
+        /* =========================
+           CREATE STARS
+        ========================== */
+
+        const starsContainer =
+            document.getElementById("stars");
+
+
+        for (let i = 0; i < 100; i++) {
+
+            const star =
+                document.createElement("div");
+
+            star.classList.add("star");
+
+
+            star.style.left =
+                Math.random() * 100 + "%";
+
+
+            star.style.top =
+                Math.random() * 100 + "%";
+
+
+            star.style.animationDelay =
+                Math.random() * 2 + "s";
+
+
+            starsContainer.appendChild(star);
+
+        }
+
+
+        /* =========================
+           SLIDESHOW
+        ========================== */
+
+        let slideIndex = 1;
+
+
+        showSlide(slideIndex);
+
+
+        function changeSlide(n) {
+
+            showSlide(
+                slideIndex += n
+            );
+
+        }
+
+
+        function currentSlide(n) {
+
+            showSlide(
+                slideIndex = n
+            );
+
+        }
+
+
+        function showSlide(n) {
+
+            const slides =
+                document.getElementsByClassName(
+                    "slide"
+                );
+
+
+            const dots =
+                document.getElementsByClassName(
+                    "dot"
+                );
+
+
+            if (n > slides.length) {
+
+                slideIndex = 1;
+
+            }
+
+
+            if (n < 1) {
+
+                slideIndex =
+                    slides.length;
+
+            }
+
+
+            for (
+                let i = 0;
+                i < slides.length;
+                i++
+            ) {
+
+                slides[i]
+                    .classList
+                    .remove("active");
+
+            }
+
+
+            for (
+                let i = 0;
+                i < dots.length;
+                i++
+            ) {
+
+                dots[i]
+                    .classList
+                    .remove("active");
+
+            }
+
+
+            slides[
+                slideIndex - 1
+            ]
+                .classList
+                .add("active");
+
+
+            dots[
+                slideIndex - 1
+            ]
+                .classList
+                .add("active");
+
+        }
+
+
+        /* =========================
+           AUTOMATIC SLIDESHOW
+        ========================== */
+
+        setInterval(() => {
+
+            changeSlide(1);
+
+        }, 5000);
+
+    </script>
+
+</body>
+</html>
+```
